@@ -8,11 +8,22 @@
 int main(int argc, char* argv[])
 {
 	initRobot(150.0f, 63.5f);
-	float x,y,z;
+	int x,y,z;
 	
 	while (std::cin >> x >> y >> z)
 	{
-		moveAlongLine(vec3(x,y,z));
+		if (x == 1337)
+		{
+			moveAlongCircle(vec3(220.0f,0,0),40);
+		}
+		else if (x == 9001)
+		{
+			drawBoard();
+		}
+		else
+		{
+			moveAlongLine(vec3(x,y,z));
+		}
 		//setServo(1,y);
 		//setServo(2,z);
 	}

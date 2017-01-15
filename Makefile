@@ -6,7 +6,7 @@ BINARY    := c-3xo
 
 CXXFLAGS := 
 CPPFLAGS := -std=c++11
-LDLIBS   := -lwiringPi -lwiringPiDev -lm -lwiringPiPca9685
+LDLIBS   := -lwiringPi -lwiringPiDev -lm -lwiringPiPca9685 -lrt
 LDFLAGS  := 
 MKDIR    := mkdir
 CXX      := g++

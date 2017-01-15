@@ -21,5 +21,7 @@ void initRobot(float robotArmLength, float firstArmHeight);
 void moveTo(vec3 pos);
 void moveTo(float x, float y, float z);
 void moveAlongLine(vec3 to);
+void moveAlongCircle(vec3 center, float radius);
+void drawBoard();
 
 #endif
