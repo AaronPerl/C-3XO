@@ -126,7 +126,7 @@ void moveAlongLine(vec3 to)
 		vec3 newPos = (prev * (1-t)) + (to * t);
 		moveTo(newPos);
 		//std::cout << duration << std::endl;
-		std::cout << newPos.getX() << "," << newPos.getY() << "," << newPos.getZ() << std::endl;
+		//std::cout << newPos.getX() << "," << newPos.getY() << "," << newPos.getZ() << std::endl;
 	}
 	moveTo(to);
 	
@@ -136,19 +136,31 @@ void moveAlongLine(vec3 to)
 void moveAlongCircle(vec3 center, float radius)
 {
 	center = vec3(center.getX(), 12, center.getZ());
-	vec3 startPos = vec3(prev.getX(), 60, prev.getY());
-	moveAlongLine(startPos);
 	vec3 circleStart = vec3(center.getX(), 60, center.getZ()) + vec3(radius,0,0);
 	moveAlongLine(circleStart);
 	
-	for (uint16_t i = 0; i < 540; i++)
+	for (uint16_t i = 0; i < 270; i++)
 	{
 		float angle = (i * 2.0f) * PI / 180.0f;
 		vec3 offset = vec3(cos(angle),0,sin(angle)) * radius;
 		moveAlongLine(center + offset);
 	}
 	
-	moveAlongLine(circleStart);
+	moveAlongLine(vec3(center.getX(), 60, center.getZ() + radius));
+}
+
+void moveAlongX(vec3 center, float radius)
+{
+	center = vec3(center.getX(), 12, center.getZ());
+	vec3 xStart = vec3(center.getX(), 60, center.getZ()) + vec3(radius,0,radius);
+	moveAlongLine(xStart);
+	moveAlongLine(center + vec3(radius,0,radius));
+	moveAlongLine(center + vec3(-radius,0,-radius));
+	moveAlongLine(center + vec3(-radius,30,-radius));
+	moveAlongLine(center + vec3(radius,30,-radius));
+	moveAlongLine(center + vec3(radius,0,-radius));
+	moveAlongLine(center + vec3(-radius,0,radius));
+	moveAlongLine(center + vec3(-radius,30,radius));
 }
 
 void drawBoard()

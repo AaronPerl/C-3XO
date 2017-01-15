@@ -6,7 +6,7 @@ BINARY    := c-3xo
 
 CXXFLAGS := 
 CPPFLAGS := -std=c++11
-LDLIBS   := -lwiringPi -lwiringPiDev -lm -lwiringPiPca9685 -lrt
+LDLIBS   := -lwiringPi -lwiringPiDev -lm -lwiringPiPca9685 -lrt -lopencv_features2d -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs -lopencv_videoio -lopencv_core
 LDFLAGS  := 
 MKDIR    := mkdir
 CXX      := g++
