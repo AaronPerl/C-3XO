@@ -1,13 +1,16 @@
 #include <iostream>
+#include "ik.h"
 #include "servo.h"
 
 int main(int argc, char* argv[])
 {
-	servoInit();
-	int16_t x;
-	while (std::cin >> x)
+	initRobot(150.0f, 140.0f);
+	float x,y,z;
+	setServo(0,0);
+	while (std::cin >> x)// >> y >> z)
 	{
-		setServo(16, x);
+		setServo(0,x);
+		//moveTo(x,y,z);
 	}
 	return 0;
 }
