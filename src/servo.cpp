@@ -40,9 +40,7 @@ void setServo(uint8_t channel, float angle)
 {
 	// Pulse width (us)
 	float pulseWidth = (angle / MAX_ANGLE) * (MAX_PULSE - CEN_PULSE) + CEN_PULSE;
-	std::cout << "Pulse width: " << pulseWidth << std::endl;
 	// PWM ticks
 	uint16_t ticks = (uint16_t) ((pulseWidth / PWM_PER) * MAX_TICKS);
-	std::cout << "Ticks:" << ticks << std::endl;
 	pwmWrite(PIN_BASE + channel, ticks);
 }
