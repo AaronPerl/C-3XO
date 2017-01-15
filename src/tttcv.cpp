@@ -54,7 +54,7 @@ void checkBoxes(bool filled[9])
 	Mat kernel = (Mat_<uchar>(3,3) << 0,1,0,1,1,1,0,1,0);
 	dilate(boardImage, boardImage, kernel);
 	
-	//imwrite("test.jpg", boardImage);
+	imwrite("test.jpg", boardImage);
 	
 	for (uint8_t i = 0; i < 9; i++)
 	{

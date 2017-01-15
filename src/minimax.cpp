@@ -26,6 +26,8 @@ int minimax(BoardState state, bool isX, bool myTurn, uint8_t* retMove)
 			return isX?-10:10;
 		case tie:
 			return 0;
+		case none:
+			break;
 	}
 	
 	// Determine all possible moves from this state
