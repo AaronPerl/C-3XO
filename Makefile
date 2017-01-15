@@ -5,7 +5,7 @@ OBJECTS   := $(addprefix $(BINDIR)/,$(notdir $(SOURCES:.cpp=.o)))
 BINARY    := c-3xo
 
 CXXFLAGS := 
-CPPFLAGS :=
+CPPFLAGS := -std=c++11
 LDLIBS   := -lwiringPi -lwiringPiDev -lm -lwiringPiPca9685
 LDFLAGS  := 
 MKDIR    := mkdir

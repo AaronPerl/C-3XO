@@ -3,11 +3,20 @@
 #include "ik.h"
 #include "servo.h"
 #include "tictactoe.h"
+#include "minimax.h"
 
 int main(int argc, char* argv[])
 {
 	initRobot(150.0f, 140.0f);
 	float x,y,z;
+	setServo(0,0);
+	
+	while (std::cin >> x)
+	{
+		setServo(0,x);
+	}
+	
+	/*
 	int r,c;
 	bool isX = true;
 	bool playerIsX;
@@ -32,7 +41,6 @@ int main(int argc, char* argv[])
 	}
 	
 	BoardState state;
-	//setServo(0,0);
 	state.print();
 	while (state.isOver() == none)//std::cin >> x)// >> y >> z)
 	{
@@ -61,7 +69,17 @@ int main(int argc, char* argv[])
 		}
 		else
 		{
-			// minimax here
+			uint8_t move = decideMove(state, !playerIsX);
+			uint8_t row = move / 3;
+			uint8_t col = move % 3;
+			if (isX)
+			{
+				state.setTile(row, col, xTile);
+			}
+			else
+			{
+				state.setTile(row, col, oTile);
+			}
 		}
 		isX = !isX;
 		state.print();
@@ -84,7 +102,7 @@ int main(int argc, char* argv[])
 		default:
 			std::cout << "problematic!";
 			break;
-	}
+	}*/
 	std::cout << std::endl;
 	getc(stdin);
 	return 0;
