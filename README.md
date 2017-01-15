@@ -9,6 +9,10 @@ Compilation requires wiringPi
 
 http://wiringpi.com/download-and-install/
 
-and the PCA9685 devLib extension by Reinbert on Github
+as well as the PCA9685 devLib extension by Reinbert on Github
 
 https://github.com/Reinbert/pca9685
+
+and OpenCV installed from a precompiled binary found at
+
+https://github.com/Nolaan/libopencv_24/releases/tag/OpenCV_2.4.10
